@@ -1,29 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBKU Login & Signup</title>
 
-  <link rel="stylesheet" href="css/style.css">
-
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="card">
-  <h2>Google Login</h2>
+<div class="container">
 
-  <div id="g_id_onload"
-       data-client_id="YOUR_GOOGLE_CLIENT_ID"
-       data-callback="handleCredentialResponse">
-  </div>
+    <h1>SBKU</h1>
 
-  <div class="g_id_signin"></div>
+    <!-- Signup -->
+    <div id="signupSection">
 
-  <div id="message"></div>
+        <h2>Create Account</h2>
+
+        <input type="text" id="sName" placeholder="Full Name">
+
+        <input type="email" id="sEmail" placeholder="Email">
+
+        <input type="password" id="sPassword" placeholder="Password">
+
+        <button onclick="signup()">Sign Up</button>
+
+        <p>
+            Already have an account?
+            <a href="#" onclick="showLogin()">Login</a>
+        </p>
+
+    </div>
+
+    <!-- Login -->
+    <div id="loginSection" class="hidden">
+
+        <h2>Login</h2>
+
+        <input type="email" id="lEmail" placeholder="Email">
+
+        <input type="password" id="lPassword" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+
+        <p>
+            Don't have an account?
+            <a href="#" onclick="showSignup()">Sign Up</a>
+        </p>
+
+    </div>
+
+    <div id="message"></div>
+
 </div>
 
-<script src="js/app.js"></script>
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
 
 </body>
 </html>
