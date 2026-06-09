@@ -1,41 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="card">
+<div class="dashboard">
 
-  <h2>Dashboard</h2>
+    <h1>Dashboard</h1>
 
-  <div id="userInfo"></div>
+    <h2 id="welcome"></h2>
 
-  <button onclick="logout()">Logout</button>
+    <button onclick="logout()">Logout</button>
 
 </div>
 
-<script>
-
-const user = JSON.parse(localStorage.getItem("user"));
-
-if(!user){
-  location.href = "index.html";
-}
-
-document.getElementById("userInfo").innerHTML = `
-<h3>${user.name}</h3>
-<p>${user.email}</p>
-`;
-
-function logout(){
-  localStorage.removeItem("user");
-  location.href = "index.html";
-}
-
-</script>
+<script src="js/dashboard.js"></script>
 
 </body>
 </html>
